@@ -36,12 +36,16 @@ function translateToKasteyano(input)
 
   // vowels: single letter to multiple letter mapping
   input = input.replace("i", "ee");
+  input = input.replace("í", "ee");
+  input = input.replace("ï", "ee");
   input = input.replace("u", "oo");
+  input = input.replace("ú", "oo");
+  input = input.replace("ü", "oo");
 
   // single letter remapping
   input = input.replace("v", "b");
   input = input.replace("c", "s");
-  
+
   return input
 }
 
