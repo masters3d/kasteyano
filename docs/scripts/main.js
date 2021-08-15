@@ -5,46 +5,46 @@ function translateToKasteyano(input)
   input = input.toLowerCase()
 
   // special cases
-  input = input.replace(" r", "rr"); // first r in word starts with double rr
-  input = input.replace("rrr", "rr"); // clear up too many r's
+  input = input.replaceAll(" r", "rr"); // first r in word starts with double rr
+  input = input.replaceAll("rrr", "rr"); // clear up too many r's
 
 
   // replace all double letter usages
-  input = input.replace("ll", "y");
-  input = input.replace("gu", "w");
-  input = input.replace("qu", "k"); // We dont want the letter u to hand around after replacement
-  input = input.replace("ch", "sh");
+  input = input.replaceAll("ll", "y");
+  input = input.replaceAll("gu", "w");
+  input = input.replaceAll("qu", "k"); // We dont want the letter u to hand around after replacement
+  input = input.replaceAll("ch", "sh");
 
   // double letter to double letter
-  input = input.replace("ca", "ka");
-  input = input.replace("ce", "se");
-  input = input.replace("ci", "si");
-  input = input.replace("co", "ki");
-  input = input.replace("cu", "ku");
+  input = input.replaceAll("ca", "ka");
+  input = input.replaceAll("ce", "se");
+  input = input.replaceAll("ci", "si");
+  input = input.replaceAll("co", "ki");
+  input = input.replaceAll("cu", "ku");
 
   // single letters that were part of double replacements
-  input = input.replace("q", "k");
+  input = input.replaceAll("q", "k");
 
   // single letter to multiple letter mapping
-  input = input.replace("ñ", "ny");
-  input = input.replace("d", "th");
-  input = input.replace("f", "ph");
-  input = input.replace("z", "ss");
-  input = input.replace("x", "ss");
-  input = input.replace("j", "gh");
-  input = input.replace("m", "nn");
+  input = input.replaceAll("ñ", "ny");
+  input = input.replaceAll("d", "th");
+  input = input.replaceAll("f", "ph");
+  input = input.replaceAll("z", "ss");
+  input = input.replaceAll("x", "ss");
+  input = input.replaceAll("j", "gh");
+  input = input.replaceAll("m", "nn");
 
   // vowels: single letter to multiple letter mapping
-  input = input.replace("i", "ee");
-  input = input.replace("í", "ee");
-  input = input.replace("ï", "ee");
-  input = input.replace("u", "oo");
-  input = input.replace("ú", "oo");
-  input = input.replace("ü", "oo");
+  input = input.replaceAll("i", "ee");
+  input = input.replaceAll("í", "ee");
+  input = input.replaceAll("ï", "ee");
+  input = input.replaceAll("u", "oo");
+  input = input.replaceAll("ú", "oo");
+  input = input.replaceAll("ü", "oo");
 
   // single letter remapping
-  input = input.replace("v", "b");
-  input = input.replace("c", "s");
+  input = input.replaceAll("v", "b");
+  input = input.replaceAll("c", "s");
 
   return input
 }
