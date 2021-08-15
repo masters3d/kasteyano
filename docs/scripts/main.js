@@ -4,10 +4,16 @@ function translateToKasteyano(input)
   // clean up
   input = input.toLowerCase()
 
+  // special cases
+  input = input.replace(" r", "rr"); // first r in word starts with double rr
+  input = input.replace("rrr", "rr"); // clear up too many r's
+
+
   // replace all double letter usages
   input = input.replace("ll", "y");
   input = input.replace("gu", "w");
   input = input.replace("qu", "k"); // We dont want the letter u to hand around after replacement
+  input = input.replace("ch", "sh");
 
   // double letter to double letter
   input = input.replace("ca", "ka");
@@ -19,14 +25,23 @@ function translateToKasteyano(input)
   // single letters that were part of double replacements
   input = input.replace("q", "k");
 
- // single letter to multiple letter mapping
- input = input.replace("ñ", "ny");
+  // single letter to multiple letter mapping
+  input = input.replace("ñ", "ny");
+  input = input.replace("d", "th");
+  input = input.replace("f", "ph");
+  input = input.replace("z", "ss");
+  input = input.replace("x", "ss");
+  input = input.replace("j", "gh");
+  input = input.replace("m", "nn");
+
+  // vowels: single letter to multiple letter mapping
+  input = input.replace("i", "ee");
+  input = input.replace("u", "oo");
 
   // single letter remapping
-  input = input.replace("j", "g");
   input = input.replace("v", "b");
-  input = input.replace("v", "b");
-
+  input = input.replace("c", "s");
+  
   return input
 }
 
