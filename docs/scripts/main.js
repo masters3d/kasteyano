@@ -12,7 +12,7 @@ function translateToKasteyano(input)
   // replace all double letter usages
   input = input.replaceAll("ll", "y");
   input = input.replaceAll("gu", "w");
-  input = input.replaceAll("qu", "k"); // We dont want the letter u to hand around after replacement
+  input = input.replaceAll("qu", "k"); // We don't want the letter u to hand around after replacement
   input = input.replaceAll("ch", "sh");
 
   // double letter to double letter
@@ -32,7 +32,10 @@ function translateToKasteyano(input)
   input = input.replaceAll("z", "ss");
   input = input.replaceAll("x", "ss");
   input = input.replaceAll("j", "gh");
-  input = input.replaceAll("m", "nn");
+
+  // vowels: single letter to single letter mapping
+  input = input.replaceAll("e", "é");
+  input = input.replaceAll("o", "ó");
 
   // vowels: single letter to multiple letter mapping
   input = input.replaceAll("i", "ee");
